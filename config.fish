@@ -1,33 +1,8 @@
-# fish git prompt
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch yellow
-
-# Status Chars
-set __fish_git_prompt_char_dirtystate '⚡'
-set __fish_git_prompt_char_stagedstate '→'
-set __fish_git_prompt_char_stashstate '↩'
-set __fish_git_prompt_char_upstream_ahead '↑'
-set __fish_git_prompt_char_upstream_behind '↓'
- 
-function fish_prompt
-        set last_status $status
-        set_color $fish_color_cwd
-        printf '%s' (prompt_pwd)
-        set_color normal
-        printf '%s ' (__fish_git_prompt)
-       set_color normal
-end
-
 # googler configuration
-alias g='googler -n 4 -c uk -l uk'## Functions
+alias g "googler -n 4 -c uk -l uk"
 
-# liquidprompt implementation for fish
-function fish_prompt --description 'Write out the prompt'
-    # _lp_prompt is automatically called before printing a new prompt
-    # (thanks to the 'fish_prompt' event) and sets $LP_PROMPT.
-    echo "$LP_PROMPT"
+function fish_prompt
+	echo "$LP_PROMPT"
 end
 
 function _lp_init --description 'Initialize liquidprompt'
@@ -790,7 +765,7 @@ function _lp_config --description 'Configure liquidprompt'
         set -g NO_COL (set_color normal)
 
         # Default values (globals)
-        set -e LP_PS1
+        set -e LP_PS1 
         set -g LP_PROMPT_PREFIX ""
         set -g LP_PROMPT_POSTFIX ""
         set -g LP_TITLE_OPEN "\e]0;"
@@ -869,10 +844,10 @@ function _lp_config --description 'Configure liquidprompt'
             . "/etc/liquidpromptrc.fish"
         end
 
-        if [ -f "$HOME/.liquidpromptrc.fish" ]
-            set configfile "$HOME/.liquidpromptrc.fish"
+        if [ -f "~/.config/fish/.liquidpromptrc.fish" ]
+            set configfile "~/.config/fish/.liquidpromptrc.fish"
         else if [ -z "$XDG_HOME_DIR" ]
-            set configfile "$HOME/.liquidpromptrc.fish"
+            set configfile "~/config/fish/.liquidpromptrc.fish"
         else
             set configfile "$XDG_HOME_DIR/liquidpromptrc.fish"
         end
@@ -1361,3 +1336,7 @@ _lp_prompt
 # Erase unnecessary (at runtime) functions
 functions -e _lp_config
 functions -e _lp_init
+
+lp_enable GIT
+lp_enable BATT
+lp_enable TIME

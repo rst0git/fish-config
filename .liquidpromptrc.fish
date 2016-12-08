@@ -5,7 +5,7 @@
 
 # If you want to use different themes and features,
 # you can load the corresponding files here:
-source ~/.liquid.theme
+source ./.liquid.theme
 
 #############
 # BEHAVIOUR #
@@ -80,7 +80,7 @@ set -g LP_ENABLE_GIT
 #set -g LP_ENABLE_BZR
 
 # Show time of the last prompt display
-#set -g LP_ENABLE_TIME
+set -g LP_ENABLE_TIME
 
 # When showing time, use an analog clock instead of numeric values.
 # The analog clock is "accurate" to the nearest half hour.
@@ -93,7 +93,7 @@ set -g LP_ENABLE_GIT
 # recommended value is 0
 # See LP_TITLE_OPEN and LP_TITLE_CLOSE to change escape characters to adapt this
 # feature to your specific terminal.
-#set -g LP_ENABLE_TITLE
+set -g LP_ENABLE_TITLE
 
 # Enable Title for screen and byobu
 #set -g LP_ENABLE_SCREEN_TITLE
