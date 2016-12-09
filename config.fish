@@ -793,7 +793,7 @@ function _lp_config --description 'Configure liquidprompt'
         set -g LP_MARK_BRACKET_CLOSE "]"
         set -g LP_MARK_SHORTEN_PATH " … "
 
-        set -g LP_COLOR_PATH "$BOLD"
+        set -g LP_COLOR_PATH "$BOLD_GREEN"
         set -g LP_COLOR_PATH_ROOT "$BOLD_YELLOW"
         set -g LP_COLOR_PROXY "$BOLD_BLUE"
         set -g LP_COLOR_JOB_D "$YELLOW"
@@ -1338,5 +1338,3 @@ functions -e _lp_config
 functions -e _lp_init
 
 lp_enable GIT
-lp_enable BATT
-lp_enable TIME

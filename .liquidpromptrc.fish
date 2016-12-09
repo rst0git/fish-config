@@ -11,6 +11,10 @@ source ./.liquid.theme
 # BEHAVIOUR #
 #############
 
+# Current working directory
+set -g LP_COLOR_PATH "$BOLD_GREEN"         # as normal user
+set -g LP_COLOR_PATH_ROOT "$BOLD_YELLOW" # as root
+
 # Maximal value under which the battery level is displayed
 # Recommended value is 75
 set -g LP_BATTERY_THRESHOLD 75
@@ -86,7 +90,7 @@ set -g LP_ENABLE_TIME
 # The analog clock is "accurate" to the nearest half hour.
 # You must have a unicode-capable terminal and a font with the "CLOCK"
 # characters.
-#set -g LP_TIME_ANALOG
+set -g LP_TIME_ANALOG
 
 # Use the liquid prompt as the title of the terminal window
 # This may not work properly on exotic terminals, thus the
