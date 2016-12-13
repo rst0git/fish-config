@@ -1183,9 +1183,9 @@ function _lp_prompt -e fish_prompt --description 'Compute the prompt'
         else
             set LP_PROMPT "$LP_PROMPT""$LP_VCS"
         end
-        set LP_PROMPT "$LP_PROMPT""$LP_ERR""$LP_MARK""$LP_PROMPT_POSTFIX"
+        #set LP_PROMPT "$LP_PROMPT""$LP_ERR""$LP_MARK""$LP_PROMPT_POSTFIX"
 
-        set LP_PROMPT "$LP_PROMPT"" "
+        #set LP_PROMPT "$LP_PROMPT"" "
     end
 end
 
@@ -1333,6 +1333,7 @@ _lp_init
 _lp_checks
 _lp_directory
 _lp_prompt
+
 # Erase unnecessary (at runtime) functions
 functions -e _lp_config
 functions -e _lp_init
