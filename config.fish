@@ -1,5 +1,5 @@
-# googler configuration
-alias g "googler -n 4 -c uk -l uk"
+alias mv 'mv --backup=numbered'
+alias cp 'cp --backup=numbered'
 
 function fish_prompt
 	echo "$LP_PROMPT"
@@ -765,7 +765,7 @@ function _lp_config --description 'Configure liquidprompt'
         set -g NO_COL (set_color normal)
 
         # Default values (globals)
-        set -e LP_PS1 
+        set -e LP_PS1
         set -g LP_PROMPT_PREFIX ""
         set -g LP_PROMPT_POSTFIX ""
         set -g LP_TITLE_OPEN "\e]0;"
@@ -1293,39 +1293,39 @@ function lp_prompt_on --description 'Display the liquidprompt'
 end
 
 ## Completion rules
-complete -c lp_enable -x -l list -d 'List available options'
-complete -c lp_enable -x -a 'PERM' -d 'Enable permissions color'
-complete -c lp_enable -x -a 'PROXY' -d 'Enable proxy display'
-complete -c lp_enable -x -a 'TEMP' -d 'Enable temperature display'
-complete -c lp_enable -x -a 'JOBS' -d 'Enable jobs informations display'
-complete -c lp_enable -x -a 'LOAD' -d 'Enable cpu load display'
-complete -c lp_enable -x -a 'GIT' -d 'Enable git informations display'
-complete -c lp_enable -x -a 'SVN' -d 'Enable subversion informations display'
-complete -c lp_enable -x -a 'FOSSIL' -d 'Enable fossil informations display'
-complete -c lp_enable -x -a 'BZR' -d 'Enable bazaar informations display'
-complete -c lp_enable -x -a 'BATT' -d 'Enable battery state display'
-complete -c lp_enable -x -a 'VIRTUALENV' -d 'Enable virtualenv informations display'
-complete -c lp_enable -x -a 'VCS_ROOT' -d 'Enable vcs informations display for root'
-complete -c lp_enable -x -a 'TITLE' -d 'Enable title'
-complete -c lp_enable -x -a 'SCREEN_TITLE' -d 'Enable screen title'
-complete -c lp_enable -x -a 'SSH_COLORS' -d 'Enable ssh colors'
-
-complete -c lp_disable -x -l list -d 'List available options'
-complete -c lp_disable -x -a 'PERM' -d 'Disable permissions color'
-complete -c lp_disable -x -a 'PROXY' -d 'Disable proxy display'
-complete -c lp_disable -x -a 'TEMP' -d 'Disable temperature display'
-complete -c lp_disable -x -a 'JOBS' -d 'Disable jobs informations display'
-complete -c lp_disable -x -a 'LOAD' -d 'Disable cpu load display'
-complete -c lp_disable -x -a 'GIT' -d 'Disable git informations display'
-complete -c lp_disable -x -a 'SVN' -d 'Disable subversion informations display'
-complete -c lp_disable -x -a 'FOSSIL' -d 'Disable fossil informations display'
-complete -c lp_disable -x -a 'BZR' -d 'Disable bazaar informations display'
-complete -c lp_disable -x -a 'BATT' -d 'Disable battery state display'
-complete -c lp_disable -x -a 'VIRTUALENV' -d 'Disable virtualenv informations display'
-complete -c lp_disable -x -a 'VCS_ROOT' -d 'Disable vcs informations display for root'
-complete -c lp_disable -x -a 'TITLE' -d 'Disable title'
-complete -c lp_disable -x -a 'SCREEN_TITLE' -d 'Disable screen title'
-complete -c lp_disable -x -a 'SSH_COLORS' -d 'Disable ssh colors'
+#complete -c lp_enable -x -l list -d 'List available options'
+#complete -c lp_enable -x -a 'PERM' -d 'Enable permissions color'
+#complete -c lp_enable -x -a 'PROXY' -d 'Enable proxy display'
+#complete -c lp_enable -x -a 'TEMP' -d 'Enable temperature display'
+#complete -c lp_enable -x -a 'JOBS' -d 'Enable jobs informations display'
+#complete -c lp_enable -x -a 'LOAD' -d 'Enable cpu load display'
+#complete -c lp_enable -x -a 'GIT' -d 'Enable git informations display'
+#complete -c lp_enable -x -a 'SVN' -d 'Enable subversion informations display'
+#complete -c lp_enable -x -a 'FOSSIL' -d 'Enable fossil informations display'
+#complete -c lp_enable -x -a 'BZR' -d 'Enable bazaar informations display'
+#complete -c lp_enable -x -a 'BATT' -d 'Enable battery state display'
+#complete -c lp_enable -x -a 'VIRTUALENV' -d 'Enable virtualenv informations display'
+#complete -c lp_enable -x -a 'VCS_ROOT' -d 'Enable vcs informations display for root'
+#complete -c lp_enable -x -a 'TITLE' -d 'Enable title'
+#complete -c lp_enable -x -a 'SCREEN_TITLE' -d 'Enable screen title'
+#complete -c lp_enable -x -a 'SSH_COLORS' -d 'Enable ssh colors'
+#
+#complete -c lp_disable -x -l list -d 'List available options'
+#complete -c lp_disable -x -a 'PERM' -d 'Disable permissions color'
+#complete -c lp_disable -x -a 'PROXY' -d 'Disable proxy display'
+#complete -c lp_disable -x -a 'TEMP' -d 'Disable temperature display'
+#complete -c lp_disable -x -a 'JOBS' -d 'Disable jobs informations display'
+#complete -c lp_disable -x -a 'LOAD' -d 'Disable cpu load display'
+#complete -c lp_disable -x -a 'GIT' -d 'Disable git informations display'
+#complete -c lp_disable -x -a 'SVN' -d 'Disable subversion informations display'
+#complete -c lp_disable -x -a 'FOSSIL' -d 'Disable fossil informations display'
+#complete -c lp_disable -x -a 'BZR' -d 'Disable bazaar informations display'
+#complete -c lp_disable -x -a 'BATT' -d 'Disable battery state display'
+#complete -c lp_disable -x -a 'VIRTUALENV' -d 'Disable virtualenv informations display'
+#complete -c lp_disable -x -a 'VCS_ROOT' -d 'Disable vcs informations display for root'
+#complete -c lp_disable -x -a 'TITLE' -d 'Disable title'
+#complete -c lp_disable -x -a 'SCREEN_TITLE' -d 'Disable screen title'
+#complete -c lp_disable -x -a 'SSH_COLORS' -d 'Disable ssh colors'
 
 ## First initialization
 _lp_config
