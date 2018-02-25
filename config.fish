@@ -496,7 +496,7 @@ function _lp_init --description 'Initialize liquidprompt'
             set -l ret
             set -l end "$NO_COL"
 
-            if [ (git status 2> /dev/null | grep "# Untracked") ]
+            if [ (git status 2> /dev/null | grep "Untracked") ]
                 set end "$LP_COLOR_CHANGES""$LP_MARK_UNTRACKED""$end"
             end
             if [ (git stash list 2> /dev/null) ]
