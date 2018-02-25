@@ -499,8 +499,14 @@ function _lp_init --description 'Initialize liquidprompt'
             if [ (git status 2> /dev/null | grep "Untracked") ]
                 set end "$LP_COLOR_CHANGES""$LP_MARK_UNTRACKED""$end"
             end
-            if [ (git stash list 2> /dev/null) ]
-                set end "$LP_COLOR_COMMITS""$LP_MARK_STASH""$end"
+
+            set stash (git stash list 2> /dev/null | wc -l)
+            if [ $stash -gt 0 ]
+                if [ $stash -eq 1 ]
+                    set end "$LP_COLOR_COMMITS""$LP_MARK_STASH""$end"
+                else
+                    set end "(""$LP_COLOR_COMMITS""$stash""$LP_MARK_STASH""$NO_COL"")""$end"
+                end
             end
 
             set -l remote (git config --get branch.{$branch}.remote 2> /dev/null)
