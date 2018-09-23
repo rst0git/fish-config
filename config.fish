@@ -1,6 +1,9 @@
 alias mv 'mv --backup=numbered'
 alias cp 'cp --backup=numbered'
 
+# Suppress welcome message
+set fish_greeting
+
 function fish_prompt
 	echo "$LP_PROMPT"
 end
