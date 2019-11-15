@@ -962,9 +962,7 @@ function _lp_checks -e lp_feature_option_changed --description 'Checks'
 
     function _lp_choose_title --description 'Choose the right fish_title'
         functions -e fish_title
-        if not set -q LP_ENABLE_TITLE
-            functions -c _lp_title_default fish_title
-        else
+        if set -q LP_ENABLE_TITLE
             [ (expr "$TERM" : "screen.*") -ne 0 ]; or set -q LP_ENABLE_SCREEN_TITLE
             if [ "$status" -eq 0 ]
                 functions -c _lp_title fish_title
